@@ -1,14 +1,18 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "c9b4f458-070d-4605-96cb-740024b3429f"
+    "analytics": "0624025b-06be-4bcd-8190-e8fbbfc0b6c1"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rwt": {
+    "rwttandoor": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -16,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rwt",
+            "outputPath": "dist/rwttandoor",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +29,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-             
             ],
             "styles": [
               "src/styles.css",
@@ -39,11 +42,11 @@
               "src/assets/css/icomoon.css",
               "src/assets/css/style.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
-              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css", 
-              "./node_modules/aos/dist/aos.css" 
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js",  
+              "node_modules/jquery/dist/jquery.min.js",
               "./node_modules/aos/dist/aos.js"
             ]
           },
@@ -70,8 +73,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ]
             }
@@ -80,18 +83,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rwt:build"
+            "browserTarget": "rwttandoor:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rwt:build:production"
+              "browserTarget": "rwttandoor:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rwt:build"
+            "browserTarget": "rwttandoor:build"
           }
         },
         "test": {
@@ -128,15 +131,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rwt:serve"
+            "devServerTarget": "rwttandoor:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rwt:serve:production"
+              "devServerTarget": "rwttandoor:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "rwt"
+    }
+  },
+  "defaultProject": "rwttandoor"
 }

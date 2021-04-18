@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { menu } from '../../services/menu'
-//declare const fndata: any;
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  menu: {};
+  menu: any;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
   navItems: menu[] = [
     {
